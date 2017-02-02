@@ -12,7 +12,7 @@ public class Application {
      * @param goal  package size.
      * @return the number of small chocolate bars used to fill up the package or -1 if it could not be done.
      */
-    private int makeChocolate(int small, int big, int goal) {
+    public int makeChocolate(int small, int big, int goal) {
         int goal_after_big_basrs = 0;
         int number_of_small_bars = 0;
 
