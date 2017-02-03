@@ -13,15 +13,15 @@ public class Application {
      * @return the number of small chocolate bars used to fill up the package or -1 if it could not be done.
      */
     public int makeChocolate(int small, int big, int goal) {
-        int goal_after_big_basrs = 0;
-        int number_of_small_bars = 0;
+        int goalAfterBigBars = 0;
+        int numberOfSmallBars = 0;
 
         if (small < 0 || big < 0 || goal < 0)
             return -1;
-        goal_after_big_basrs = bigBarsFirst(big, goal);
-        number_of_small_bars = smallBarsNext(small, goal_after_big_basrs);
+        goalAfterBigBars = bigBarsFirst(big, goal);
+        numberOfSmallBars = smallBarsNext(small, goalAfterBigBars);
 
-        return number_of_small_bars;
+        return numberOfSmallBars;
     }
 
     /**
@@ -32,11 +32,11 @@ public class Application {
      * @return the remaining space in the package (goal).
      */
     private int bigBarsFirst(int big, int goal) {
-        int big_bars = 5;
+        int bigBars = 5;
 
         if (big == 0)
             return goal;
-        goal -= big_bars;
+        goal -= bigBars;
         return bigBarsFirst(big - 1, goal);
     }
 
@@ -48,12 +48,12 @@ public class Application {
      * @return the number of small bars used to fill up the package or -1 if the package could not be filled up.
      */
     private int smallBarsNext(int small, int goal) {
-        int small_bars = 1;
+        int smallBars = 1;
         int result = 0;
-        int number_of_small_bars = 0;
+        int numberOfSmallBars = 0;
 
-        number_of_small_bars = small * small_bars;
-        result = number_of_small_bars - goal;
+        numberOfSmallBars = small * smallBars;
+        result = numberOfSmallBars - goal;
         if (result < 0)
             return -1;
         if (result == 0)
